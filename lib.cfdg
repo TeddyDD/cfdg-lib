@@ -1,0 +1,63 @@
+//╺┳╸┏━╸╺┳┓╺┳┓╻ ╻╺┳┓╺┳┓   ╻  ╻┏┓ 
+// ┃ ┣╸  ┃┃ ┃┃┗┳┛ ┃┃ ┃┃   ┃  ┃┣┻┓
+// ╹ ┗━╸╺┻┛╺┻┛ ╹ ╺┻┛╺┻┛   ┗━╸╹┗━┛
+
+shape Grid(shape sp, number siz, number separation) {
+    loop siz [x separation]
+        loop siz [y separation]
+        	sp []
+}
+
+shape Quad(shape sp, number shift) {
+    sp [x -shift y  shift]
+    sp [x -shift y -shift]
+    sp [x shift  y -shift]
+    sp [x shift  y  shift]
+}
+
+shape Maybe(shape sp)
+rule { sp [] }
+rule {}
+
+shape Rotated(shape sp)
+rule {
+    sp []
+}
+rule {
+    sp [r 90]
+}
+rule {
+    sp [r -90]
+}
+rule {
+    sp [r 180]
+}
+
+shape Shifted(shape sp, number minoff, number maxoff)
+rule {
+    sp [x minoff..maxoff]
+}
+rule {
+    sp [y minoff..maxoff]
+}
+rule {
+    sp [x -minoff..-maxoff]
+}
+rule {
+    sp [y -minoff..-maxoff]
+}
+
+shape Or(shape one, shape two)
+rule {
+    one []
+}
+rule {
+    two []
+}
+
+shape Tree(shape sp, number Offset, number Rot, number Scal) {
+    sp []
+    Tree(=) [y Offset r  Rot s Scal]
+    Tree(=) [y Offset r -Rot s Scal]
+}
+
