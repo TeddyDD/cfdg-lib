@@ -1,4 +1,5 @@
 # CFDG LIB
+![icon](icon.png)
 
 Some utils I use in my CFDG works. If you don't know what I mean check out
 awesome [**Context Free Art**](https://www.contextfreeart.org/) program!
