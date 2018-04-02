@@ -61,3 +61,18 @@ shape Tree(shape sp, number Offset, number Rot, number Scal) {
     Tree(=) [y Offset r -Rot s Scal]
 }
 
+// Paths
+
+path ARC(number Width) {
+	MOVETO(-.5, -.5)
+	ARCTO(0.5, 0.5, 1)
+	STROKE(Width, CF::SquareCap) []
+}
+
+path ANGLE(number Width) {
+    MOVETO(-.5, -.5)
+    LINETO(-.5, .5)
+    LINETO(.5, .5)
+    STROKE(Width, CF::SquareCap) []
+}
+
