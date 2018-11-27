@@ -72,6 +72,12 @@ shape OnePercent(shape shp)
 rule 1% { shp [] }
 rule {}
 
+// Colors
+
+shape Grayscale(shape shp) {
+	shp [b 1..-1]
+}
+
 // Paths
 
 path ARC(number Width) {
