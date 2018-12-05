@@ -47,6 +47,17 @@ rule {
     sp [y -minoff..-maxoff]
 }
 
+shape Flipped(shape sp)
+rule {
+    sp [s 1 -1]
+}
+rule {
+    sp [s -1 1]
+}
+rule {
+    sp [s -1 -1]
+}
+
 shape Or(shape one, shape two)
 rule {
     one []
