@@ -78,6 +78,20 @@ rule { SQUARE [] }
 rule { CIRCLE [] }
 rule { TRIANGLE [] }
 
+// Ring that keeps initial rotation of a shape
+shape RingKeep(shape Shp, number Rad, number Count){
+    deg = 360 / Count
+    loop i=Count [r deg]
+        Shp [[x Rad r (i * -deg)]]
+}
+
+// Ring that rotates shapes outwards
+shape RingOut(shape Shp, number Rad, number Count){
+    deg = 360 / Count
+    loop i=Count []
+        Shp [[r (deg * i) y Rad]]
+}
+
 // Percentage filter, useful for non transparent, constant shapes
 // Does not give exact results, based on probability
 shape Pass(number N, shape shp) {
