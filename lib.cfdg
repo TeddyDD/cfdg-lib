@@ -72,6 +72,12 @@ shape Tree(shape sp, number Offset, number Rot, number Scal) {
     Tree(=) [y Offset r -Rot s Scal]
 }
 
+// Any basic shape
+shape Basic
+rule { SQUARE [] }
+rule { CIRCLE [] }
+rule { TRIANGLE [] }
+
 // Percentage filter, useful for non transparent, constant shapes
 // Does not give exact results, based on probability
 shape Pass(number N, shape shp) {
