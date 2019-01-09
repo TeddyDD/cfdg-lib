@@ -1,11 +1,11 @@
-//╺┳╸┏━╸╺┳┓╺┳┓╻ ╻╺┳┓╺┳┓   ╻  ╻┏┓ 
+//╺┳╸┏━╸╺┳┓╺┳┓╻ ╻╺┳┓╺┳┓   ╻  ╻┏┓
 // ┃ ┣╸  ┃┃ ┃┃┗┳┛ ┃┃ ┃┃   ┃  ┃┣┻┓
 // ╹ ┗━╸╺┻┛╺┻┛ ╹ ╺┻┛╺┻┛   ┗━╸╹┗━┛
 
 shape Grid(shape sp, number siz, number separation) {
     loop siz [x separation]
         loop siz [y separation]
-        	sp []
+            sp []
 }
 
 shape Quad(shape sp, number shift) {
@@ -74,7 +74,7 @@ shape Tree(shape sp, number Offset, number Rot, number Scal) {
 
 // Any basic shape
 shape Basic
-rule { SQUARE [] }
+rule { SQUARE []
 rule { CIRCLE [] }
 rule { TRIANGLE [] }
 
@@ -95,8 +95,8 @@ shape RingOut(shape Shp, number Rad, number Count){
 // Percentage filter, useful for non transparent, constant shapes
 // Does not give exact results, based on probability
 shape Pass(number N, shape shp) {
-	loop N []
-		OnePercent (shp) []
+    loop N []
+        OnePercent (shp) []
 }
 
 shape OnePercent(shape shp)
@@ -106,15 +106,15 @@ rule {}
 // Colors
 
 shape Grayscale(shape shp) {
-	shp [b 1..-1]
+    shp [b 1..-1]
 }
 
 // Paths
 
 path ARC(number Width) {
-	MOVETO(-.5, -.5)
-	ARCTO(0.5, 0.5, 1)
-	STROKE(Width, CF::SquareCap) []
+    MOVETO(-.5, -.5)
+    ARCTO(0.5, 0.5, 1)
+    STROKE(Width, CF::SquareCap) []
 }
 
 path ANGLE(number Width) {
