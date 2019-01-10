@@ -74,7 +74,7 @@ shape Tree(shape Shp, number Offset, number Rot, number Scal) {
 
 // Any basic shape
 shape Basic
-rule { SQUARE []
+rule { SQUARE [] }
 rule { CIRCLE [] }
 rule { TRIANGLE [] }
 
