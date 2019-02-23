@@ -111,16 +111,22 @@ shape Grayscale(shape Shp) {
 
 // Paths
 
+path LINE(number Width) {
+    MOVETO( 0,  0.5 )
+    LINETO( 0, -0.5 )
+    STROKE(Width, CF::SquareCap) []
+}
+
 path ARC(number Width) {
-    MOVETO(-.5, -.5)
-    ARCTO(0.5, 0.5, 1)
+    MOVETO(-0.5, -0.5)
+    ARCTO(  0.5,  0.5, 1)
     STROKE(Width, CF::SquareCap) []
 }
 
 path ANGLE(number Width) {
-    MOVETO(-.5, -.5)
-    LINETO(-.5, .5)
-    LINETO(.5, .5)
-    STROKE(Width, CF::SquareCap) []
+	MOVETO(-0.5,  0.5)
+	LINETO(-0.5,  0.5)
+	LINETO(-0.5, -0.5)
+	LINETO( 0.5, -0.5)
+	STROKE(Width, CF::SquareCap) []
 }
-
